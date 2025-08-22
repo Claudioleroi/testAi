@@ -1,0 +1,25 @@
+2024-11-06 17:31:04 [INFO] Request: GET http://localhost:8000/settings - Response: 200
+2024-11-06 17:31:53 [INFO] Received request: text=qui es tu ?
+, max_length=100, temperature=0.7, file=None
+2024-11-06 17:32:18 [INFO] Request: POST http://localhost:8000/predict - Response: 200
+2024-11-06 17:32:18 [INFO] Received request: text=qui es tu ?
+, max_length=100, temperature=0.7, file=None
+2024-11-06 17:32:32 [INFO] Received request: text=qui es tu ?
+, max_length=100, temperature=0.7, file=None
+2024-11-06 17:32:35 [INFO] Request: POST http://localhost:8000/predict - Response: 200
+2024-11-06 17:32:35 [INFO] Request: POST http://localhost:8000/predict - Response: 200
+2024-11-06 17:43:14 [INFO] Received request: text=bonjour!
+, max_length=100, temperature=0.7, file=None
+2024-11-06 17:43:28 [INFO] Request: POST http://localhost:8000/predict - Response: 200
+2024-11-06 21:43:39 [INFO] Received request: text=de quoi parle le document uploader, max_length=100, temperature=0.7, file=card.txt
+2024-11-06 21:44:34 [ERROR] Error in predict endpoint: relation "documents" does not exist
+LINE 1: INSERT INTO documents (name, content) VALUES ('card.txt', '\...
+                    ^
+
+2024-11-06 21:44:34 [INFO] Request: POST http://localhost:8000/predict - Response: 500
+2024-11-11 14:56:26,887 - __main__ - INFO - Loading model from models/mistral-7b-instruct-v0.1.Q3_K_S.gguf
+2024-11-11 14:56:27,538 - __main__ - INFO - Model loaded successfully
+2024-11-11 14:56:27,783 - __main__ - INFO - Starting server...
+2024-11-11 14:58:56,229 - __main__ - INFO - Received prediction request: salut !...
+2024-11-11 14:58:56,240 - __main__ - INFO - Processing with model...
+2024-11-11 15:03:22,888 - __main__ - INFO - Generated response successfully

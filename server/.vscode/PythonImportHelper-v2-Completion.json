@@ -1,0 +1,1064 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "concat",
+        "importPath": "pandas",
+        "description": "pandas",
+        "isExtraImport": true,
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "read_csv",
+        "importPath": "pandas",
+        "description": "pandas",
+        "isExtraImport": true,
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "queue",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "queue",
+        "description": "queue",
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncGenerator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncGenerator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "fitz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fitz",
+        "description": "fitz",
+        "detail": "fitz",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "boto3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "boto3",
+        "description": "boto3",
+        "detail": "boto3",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "ArgumentParser",
+        "importPath": "argparse",
+        "description": "argparse",
+        "isExtraImport": true,
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "FileType",
+        "importPath": "argparse",
+        "description": "argparse",
+        "isExtraImport": true,
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "jmespath",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "exceptions",
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "isExtraImport": true,
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "empty",
+        "importPath": "numpy",
+        "description": "numpy",
+        "isExtraImport": true,
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "zip",
+        "importPath": "builtins",
+        "description": "builtins",
+        "isExtraImport": true,
+        "detail": "builtins",
+        "documentation": {}
+    },
+    {
+        "label": "str",
+        "importPath": "builtins",
+        "description": "builtins",
+        "isExtraImport": true,
+        "detail": "builtins",
+        "documentation": {}
+    },
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "cElementTree",
+        "importPath": "xml.etree",
+        "description": "xml.etree",
+        "isExtraImport": true,
+        "detail": "xml.etree",
+        "documentation": {}
+    },
+    {
+        "label": "pyxnat",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyxnat",
+        "description": "pyxnat",
+        "detail": "pyxnat",
+        "documentation": {}
+    },
+    {
+        "label": "CustomHandler",
+        "kind": 6,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "class CustomHandler(logging.Handler):\n    def emit(self, record):\n        log_entry = {\n            \"timestamp\": datetime.now().isoformat(),\n            \"level\": record.levelname,\n            \"message\": record.getMessage(),\n            \"process_id\": os.getpid(),\n            \"thread_id\": record.thread,\n            \"memory_usage\": psutil.Process(os.getpid()).memory_info().rss / 1024 / 1024,\n        }",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "ContextManager",
+        "kind": 6,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "class ContextManager:\n    def __init__(self):\n        self.vectorizer = TfidfVectorizer(max_features=3000)\n        self.document_vectors = {}\n    def update_vectors(self, file_name: str, content: str):\n        if not self.document_vectors:\n            self.vectorizer.fit([content])\n        vector = self.vectorizer.transform([content])\n        self.document_vectors[file_name] = vector\n    def get_relevant_context(self, query: str, file_names: Optional[List[str]] = None, max_length: int = 2000) -> str:",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "kind": 6,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "class Query(BaseModel):\n    text: str\n    max_length: int = 10000\n    language: str = \"fr\"\n    file_names: Optional[List[str]] = None\n@app.post(\"/predict\")\nasync def predict(request: Request, query: Query):\n    try:\n        logger.info(f\"Received prediction request: {query.text[:50]}...\")\n        user_id = request.client.host",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "format_prompt_with_context",
+        "kind": 2,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "def format_prompt_with_context(text: str, language: str, context: str) -> str:\n    assistant_intro = f\"Je suis l'assistant de {company_name}. \" if company_name else \"Je suis votre assistant.\"\n    if language == \"fr\":\n        return f\"{assistant_intro}\\n\\n{text}\\n\\nMerci de répondre de manière concise et professionnelle en quelques phrases.\"\n    return f\"{assistant_intro}\\n\\n{text}\\n\\nAnswer concisely and professionally in a few sentences.\"\nasync def generate_bedrock_response(prompt: str) -> str:\n    try:\n        payload = {\"prompt\": prompt}\n        response = bedrock_client.invoke_model(\n            modelId=BEDROCK_MODEL,",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "extract_company_name",
+        "kind": 2,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "def extract_company_name(text: str) -> Optional[str]:\n    match = re.search(r\"(Company Name|Organization|Client Name):\\s*(.+)\", text, re.IGNORECASE)\n    if match:\n        return match.group(2).strip()\n    first_line = text.splitlines()[0].strip()\n    if first_line:\n        return first_line\n@app.get(\"/logs\")\nasync def stream_logs():\n    async def log_stream() -> AsyncGenerator[str, None]:",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "logger = logging.getLogger(\"ServiceClientAI\")\napp = FastAPI(title=\"Service Client AI Assistant API\")\n# Shared resources\nfile_contents: Dict[str, pd.DataFrame] = {}\ncompany_name: Optional[str] = None\nlog_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "app = FastAPI(title=\"Service Client AI Assistant API\")\n# Shared resources\nfile_contents: Dict[str, pd.DataFrame] = {}\ncompany_name: Optional[str] = None\nlog_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "log_queue",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "log_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "thread_pool",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "thread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_REGION",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "AWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_ACCESS_KEY_ID",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "AWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_SECRET_ACCESS_KEY",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "AWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "BEDROCK_MODEL",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "BEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup\napp.add_middleware(",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "bedrock_client",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "bedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=os.getenv(\"ALLOWED_ORIGINS\", \"*\"),",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "context_manager",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "context_manager = ContextManager()\ndef format_prompt_with_context(text: str, language: str, context: str) -> str:\n    assistant_intro = f\"Je suis l'assistant de {company_name}. \" if company_name else \"Je suis votre assistant.\"\n    if language == \"fr\":\n        return f\"{assistant_intro}\\n\\n{text}\\n\\nMerci de répondre de manière concise et professionnelle en quelques phrases.\"\n    return f\"{assistant_intro}\\n\\n{text}\\n\\nAnswer concisely and professionally in a few sentences.\"\nasync def generate_bedrock_response(prompt: str) -> str:\n    try:\n        payload = {\"prompt\": prompt}\n        response = bedrock_client.invoke_model(",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "user_language",
+        "kind": 5,
+        "importPath": "chatbot-bedrock-FastApi.main",
+        "description": "chatbot-bedrock-FastApi.main",
+        "peekOfCode": "user_language = {}  # Stores language preference per user session\nclass Query(BaseModel):\n    text: str\n    max_length: int = 10000\n    language: str = \"fr\"\n    file_names: Optional[List[str]] = None\n@app.post(\"/predict\")\nasync def predict(request: Request, query: Query):\n    try:\n        logger.info(f\"Received prediction request: {query.text[:50]}...\")",
+        "detail": "chatbot-bedrock-FastApi.main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "env.bin.jp",
+        "description": "env.bin.jp",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
+        "detail": "env.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "env.bin.log2design",
+        "description": "env.bin.log2design",
+        "peekOfCode": "def main(args):\n    runs_df = load_onsets(args.onsets_files, args)\n    print(\"Saving designfile (%d rows) to %s\" % (runs_df.shape[0], args.out))\n    runs_df.to_csv(args.out, index=False)\ndef load_onsets(onsets_files, args):\n    \"\"\"Read onsets file and add metadata from their filenames.\n    Return one concatenated pandas dataframe with all trials as rows.\"\"\"\n    runs = []\n    for i, fid in enumerate(onsets_files):\n        run = read_csv(fid)",
+        "detail": "env.bin.log2design",
+        "documentation": {}
+    },
+    {
+        "label": "load_onsets",
+        "kind": 2,
+        "importPath": "env.bin.log2design",
+        "description": "env.bin.log2design",
+        "peekOfCode": "def load_onsets(onsets_files, args):\n    \"\"\"Read onsets file and add metadata from their filenames.\n    Return one concatenated pandas dataframe with all trials as rows.\"\"\"\n    runs = []\n    for i, fid in enumerate(onsets_files):\n        run = read_csv(fid)\n        # If any column arguments were given, convert to a lyman-like design\n        # with explicitly named columns. Else, just concatenate and add 'run'.\n        if (args.onset_col or args.duration_col or args.condition_col or\n                args.pmods_col):",
+        "detail": "env.bin.log2design",
+        "documentation": {}
+    },
+    {
+        "label": "rename_columns",
+        "kind": 2,
+        "importPath": "env.bin.log2design",
+        "description": "env.bin.log2design",
+        "peekOfCode": "def rename_columns(args, run):\n    cols = ['run', 'onset', 'duration', 'condition']\n    # Cleanup any columns that might exist if we don't want them\n    if args.drop_cols:\n        for col in cols:\n            if col in run.columns:\n                run.drop(col, axis=1, inplace=True)\n    columns = {}\n    columns[args.onset_col] = 'onset'\n    columns[args.condition_col] = 'condition'",
+        "detail": "env.bin.log2design",
+        "documentation": {}
+    },
+    {
+        "label": "onsets_for",
+        "kind": 2,
+        "importPath": "env.bin.log2design",
+        "description": "env.bin.log2design",
+        "peekOfCode": "def onsets_for(cond, run_df):\n    \"\"\"\n    Inputs:\n      * Condition Label to grab onsets, durations & amplitudes for.\n      * Pandas Dataframe for current run containing onsets values as columns.\n    Outputs:\n      * Returns a dictionary of extracted values for onsets, durations, etc.\n      * Returns None if there are no onsets.\n    \"\"\"\n    condinfo = {}",
+        "detail": "env.bin.log2design",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "env.bin.log2design",
+        "description": "env.bin.log2design",
+        "peekOfCode": "def parse_args():\n    parser = ArgumentParser()\n    parser.add_argument('onsets_files', type=FileType('r'),\n                        help='List of FSL EV onsets to convert', nargs='+')\n    parser.add_argument('--out',   '-o', default='onsets_',\n                        help='Output filename.')\n    parser.add_argument('--verbose',      '-v', action=\"count\",\n                        help=\"increase output verbosity\")\n    parser.add_argument('--pmod-name', default='pmod',\n                        help='Name to use when writing FSL Amplitude as SPM '",
+        "detail": "env.bin.log2design",
+        "documentation": {}
+    },
+    {
+        "label": "cmp",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def cmp(a, b):\n    return (a > b) - (a < b)\nfrom builtins import zip\nfrom builtins import str\nimport os\nimport os.path as op\nimport sys\nfrom xml.etree import cElementTree as ET\nimport pyxnat\nPROJ_ATTRS = [",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_attrs",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_attrs(src_obj, dest_obj, attr_list):\n    \"\"\" Copies list of attributes form source to destination\"\"\"\n    src_attrs = src_obj.attrs.mget(attr_list)\n    src_list = dict(list(zip(attr_list, src_attrs)))\n    # NOTE: For some reason need to set te again b/c a bug somewhere sets te\n    # to sequence name\n    te_key = 'xnat:mrScanData/parameters/te'\n    if te_key in src_list:\n        src_list[te_key] = src_obj.attrs.get(te_key)\n    dest_obj.attrs.mset(src_list)",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_attributes",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_attributes(src_obj, dest_obj):\n    '''Copy attributes from src to dest'''\n    src_type = src_obj.datatype()\n    types = {'xnat:projectData': PROJ_ATTRS,\n             'xnat:subjectData': SUBJ_ATTRS,\n             'xnat:mrSessionData': MR_EXP_ATTRS,\n             'xnat:petSessionData': PET_EXP_ATTRS,\n             'xnat:ctSessionData': CT_EXP_ATTRS,\n             'xnat:mrScanData': MR_SCAN_ATTRS,\n             'xnat:petScanData': PET_SCAN_ATTRS,",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "subj_compare",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def subj_compare(item1, item2):\n    '''Compare sort of items'''\n    return cmp(item1.label(), item2.label())\ndef copy_file(src_f, dest_r, cache_d):\n    '''\n    Copy file from XNAT file source to XNAT resource destination,\n    using local cache in between'''\n    f_label = src_f.label()\n    loc_f = cache_d + '/' + f_label\n    # Make subdirectories",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_file",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_file(src_f, dest_r, cache_d):\n    '''\n    Copy file from XNAT file source to XNAT resource destination,\n    using local cache in between'''\n    f_label = src_f.label()\n    loc_f = cache_d + '/' + f_label\n    # Make subdirectories\n    loc_d = op.dirname(loc_f)\n    if not op.exists(loc_d):\n        os.makedirs(loc_d)",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_res_zip",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_res_zip(src_r, dest_r, cache_d):\n    '''\n    Copy a resource from XNAT source to XNAT destination using local cache\n    in between\n    '''\n    try:\n        # Download zip of resource\n        print('INFO:Downloading resource as zip...')\n        cache_z = src_r.get(cache_d, extract=False)\n        # Upload zip of resource",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "is_empty_resource",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def is_empty_resource(_res):\n    '''Check if resource contains any files'''\n    f_count = 0\n    for f_in in _res.files().fetchall('obj'):\n        f_count += 1\n        break\n    return f_count == 0\n# copy_project and copy_subject are untested\n# def copy_project(src_proj, dst_proj, proj_cache_dir):\n#     '''Copy XNAT project from source to destination'''",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_session",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_session(src_sess, dst_sess, sess_cache_dir):\n    '''Copy XNAT session from source to destination'''\n    print('INFO:uploading session attributes as xml')\n    # Write xml to file\n    if not op.exists(sess_cache_dir):\n        os.makedirs(sess_cache_dir)\n    sess_xml = src_sess.get()\n    xml_path = op.join(sess_cache_dir, 'sess.xml')\n    write_xml(sess_xml, xml_path)\n    sess_type = src_sess.datatype()",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_scan",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_scan(src_scan, dst_scan, scan_cache_dir):\n    '''Copy scan from source XNAT to destination XNAT'''\n    scan_type = src_scan.datatype()\n    if scan_type == '':\n        scan_type = 'xnat:otherDicomScanData'\n    dst_scan.create(scans=scan_type)\n    copy_attributes(src_scan, dst_scan)\n    # Process each resource of scan\n    for src_res in src_scan.resources().fetchall('obj'):\n        res_label = src_res.label()",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "copy_res",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def copy_res(src_res, dst_res, res_cache_dir, use_zip=False):\n    '''Copy resource from source XNAT to destination XNAT'''\n    # Create cache dir\n    if not op.exists(res_cache_dir):\n        os.makedirs(res_cache_dir)\n    # Prepare resource and check for empty\n    is_empty = False\n    print(dst_res._uri)\n    if not dst_res.exists():\n        dst_res.create()",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "write_xml",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def write_xml(xml_str, file_path, clean_tags=True):\n    \"\"\"Writing XML.\"\"\"\n    root = ET.fromstring(xml_str)\n    # We only want the tags and attributes relevant to root, no children\n    if clean_tags:\n        # Remove ID\n        if 'ID' in root.attrib:\n            del root.attrib['ID']\n        # Remove sharing tags\n        tag = '{http://nrg.wustl.edu/xnat}sharing'",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "create_parser",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def create_parser():\n    import argparse\n    \"\"\"Parse commandline arguments.\"\"\"\n    arg_parser = argparse.ArgumentParser(\n        description='Downloads a given experiment/session from an XNAT instance '\n                    'and uploads it to an independent one. Only DICOM resources '\n                    'will be imported.',\n        formatter_class=argparse.RawTextHelpFormatter)\n    arg_parser.add_argument(\n        '--h1', '--source_config', dest='source_config',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "def main(args):\n    x1 = pyxnat.Interface(config=args.source_config)\n    x2 = pyxnat.Interface(config=args.dest_config)\n    columns = ['subject_label', 'label']\n    e1 = x1.array.experiments(experiment_id=args.experiment_id,\n                              columns=columns).data[0]\n    p = x2.select.project(args.project_id)\n    s = p.subject(e1['subject_label'])\n    if not s.exists():\n        s.create()",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "PROJ_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "PROJ_ATTRS = [\n    'xnat:projectData/name',\n    'xnat:projectData/description',\n    'xnat:projectData/keywords',\n]\nSUBJ_ATTRS = [\n    'xnat:subjectData/group',\n    'xnat:subjectData/src',\n    'xnat:subjectData/investigator/firstname',\n    'xnat:subjectData/investigator/lastname',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "SUBJ_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "SUBJ_ATTRS = [\n    'xnat:subjectData/group',\n    'xnat:subjectData/src',\n    'xnat:subjectData/investigator/firstname',\n    'xnat:subjectData/investigator/lastname',\n    'xnat:subjectData/demographics[@xsi:type=xnat:demographicData]/dob',\n    'xnat:subjectData/demographics[@xsi:type=xnat:demographicData]/yob',\n    'xnat:subjectData/demographics[@xsi:type=xnat:demographicData]/age',\n    'xnat:subjectData/demographics[@xsi:type=xnat:demographicData]/gender',\n    'xnat:subjectData/demographics[@xsi:type=xnat:demographicData]/handedness',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "MR_EXP_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "MR_EXP_ATTRS = [\n    'xnat:experimentData/date',\n    'xnat:experimentData/visit_id',\n    'xnat:experimentData/time',\n    'xnat:experimentData/note',\n    'xnat:experimentData/investigator/firstname',\n    'xnat:experimentData/investigator/lastname',\n    'xnat:imageSessionData/scanner/manufacturer',\n    'xnat:imageSessionData/scanner/model',\n    'xnat:imageSessionData/operator',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "OTHER_DICOM_SCAN_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "OTHER_DICOM_SCAN_ATTRS = [\n    'xnat:imageScanData/type',\n    'xnat:imageScanData/UID',\n    'xnat:imageScanData/note',\n    'xnat:imageScanData/quality',\n    'xnat:imageScanData/condition',\n    'xnat:imageScanData/series_description',\n    'xnat:imageScanData/documentation',\n    'xnat:imageScanData/frames',\n    'xnat:imageScanData/startTime',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "MR_SCAN_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "MR_SCAN_ATTRS = [\n    'xnat:imageScanData/type',\n    'xnat:imageScanData/UID',\n    'xnat:imageScanData/note',\n    'xnat:imageScanData/quality',\n    'xnat:imageScanData/condition',\n    'xnat:imageScanData/series_description',\n    'xnat:imageScanData/documentation',\n    'xnat:imageScanData/frames',\n    'xnat:imageScanData/startTime',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "SC_SCAN_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "SC_SCAN_ATTRS = [\n    'xnat:imageScanData/type',\n    'xnat:imageScanData/UID',\n    'xnat:imageScanData/note',\n    'xnat:imageScanData/quality',\n    'xnat:imageScanData/condition',\n    'xnat:imageScanData/series_description',\n    'xnat:imageScanData/documentation',\n    'xnat:imageScanData/frames',\n    'xnat:imageScanData/scanner/manufacturer',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "PET_EXP_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "PET_EXP_ATTRS = [\n    'xnat:experimentData/date',\n    'xnat:experimentData/visit_id',\n    'xnat:experimentData/time',\n    'xnat:experimentData/note',\n    'xnat:experimentData/investigator/firstname',\n    'xnat:experimentData/investigator/lastname',\n    'xnat:imageSessionData/scanner/manufacturer',\n    'xnat:imageSessionData/scanner/model',\n    'xnat:imageSessionData/operator',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "CT_EXP_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "CT_EXP_ATTRS = [\n    'xnat:experimentData/date',\n    'xnat:experimentData/visit_id',\n    'xnat:experimentData/time',\n    'xnat:experimentData/note',\n    'xnat:experimentData/investigator/firstname',\n    'xnat:experimentData/investigator/lastname',\n    'xnat:imageSessionData/scanner/manufacturer',\n    'xnat:imageSessionData/scanner/model',\n    'xnat:imageSessionData/operator',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "PET_SCAN_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "PET_SCAN_ATTRS = [\n    'xnat:imageScanData/type',\n    'xnat:imageScanData/UID',\n    'xnat:imageScanData/note',\n    'xnat:imageScanData/quality',\n    'xnat:imageScanData/condition',\n    'xnat:imageScanData/series_description',\n    'xnat:imageScanData/documentation',\n    'xnat:imageScanData/frames',\n    'xnat:imageScanData/scanner/manufacturer',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "CT_SCAN_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "CT_SCAN_ATTRS = [\n    'xnat:imageScanData/type',\n    'xnat:imageScanData/UID',\n    'xnat:imageScanData/note',\n    'xnat:imageScanData/quality',\n    'xnat:imageScanData/condition',\n    'xnat:imageScanData/series_description',\n    'xnat:imageScanData/documentation',\n    'xnat:imageScanData/frames',\n    'xnat:imageScanData/scanner/manufacturer',",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "PROC_ATTRS",
+        "kind": 5,
+        "importPath": "env.bin.sessionmirror",
+        "description": "env.bin.sessionmirror",
+        "peekOfCode": "PROC_ATTRS = [\n    'proc:genProcData/validation/status',\n    'proc:genProcData/procstatus',\n    'proc:genProcData/proctype',\n    'proc:genProcData/procversion',\n    'proc:genProcData/walltimeused',\n    'proc:genProcData/memused'\n]\ndef copy_attrs(src_obj, dest_obj, attr_list):\n    \"\"\" Copies list of attributes form source to destination\"\"\"",
+        "detail": "env.bin.sessionmirror",
+        "documentation": {}
+    },
+    {
+        "label": "CustomHandler",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class CustomHandler(logging.Handler):\n    def emit(self, record):\n        log_entry = {\n            \"timestamp\": datetime.now().isoformat(),\n            \"level\": record.levelname,\n            \"message\": record.getMessage(),\n            \"process_id\": os.getpid(),\n            \"thread_id\": record.thread,\n            \"memory_usage\": psutil.Process(os.getpid()).memory_info().rss / 1024 / 1024,\n        }",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ContextManager",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class ContextManager:\n    def __init__(self):\n        self.vectorizer = TfidfVectorizer(max_features=3000)\n        self.document_vectors = {}\n    def update_vectors(self, file_name: str, content: str):\n        if not self.document_vectors:\n            self.vectorizer.fit([content])\n        vector = self.vectorizer.transform([content])\n        self.document_vectors[file_name] = vector\n    def get_relevant_context(self, query: str, file_names: Optional[List[str]] = None, max_length: int = 2000) -> str:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Query(BaseModel):\n    text: str\n    max_length: int = 10000\n    language: str = \"fr\"\n    file_names: Optional[List[str]] = None\n@app.post(\"/predict\")\nasync def predict(request: Request, query: Query):\n    try:\n        logger.info(f\"Received prediction request: {query.text[:50]}...\")\n        user_id = request.client.host",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "format_prompt_with_context",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def format_prompt_with_context(text: str, language: str, context: str) -> str:\n    assistant_intro = f\"Je suis l'assistant de {company_name}. \" if company_name else \"Je suis votre assistant.\"\n    if language == \"fr\":\n        return f\"{assistant_intro}\\n\\n{text}\\n\\nMerci de répondre de manière concise et professionnelle en quelques phrases.\"\n    return f\"{assistant_intro}\\n\\n{text}\\n\\nAnswer concisely and professionally in a few sentences.\"\nasync def generate_bedrock_response(prompt: str) -> str:\n    try:\n        payload = {\"prompt\": prompt}\n        response = bedrock_client.invoke_model(\n            modelId=BEDROCK_MODEL,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "extract_company_name",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def extract_company_name(text: str) -> Optional[str]:\n    match = re.search(r\"(Company Name|Organization|Client Name):\\s*(.+)\", text, re.IGNORECASE)\n    if match:\n        return match.group(2).strip()\n    first_line = text.splitlines()[0].strip()\n    if first_line:\n        return first_line\n@app.get(\"/logs\")\nasync def stream_logs():\n    async def log_stream() -> AsyncGenerator[str, None]:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "logger = logging.getLogger(\"ServiceClientAI\")\napp = FastAPI(title=\"Service Client AI Assistant API\")\n# Shared resources\nfile_contents: Dict[str, pd.DataFrame] = {}\ncompany_name: Optional[str] = None\nlog_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI(title=\"Service Client AI Assistant API\")\n# Shared resources\nfile_contents: Dict[str, pd.DataFrame] = {}\ncompany_name: Optional[str] = None\nlog_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "log_queue",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "log_queue = queue.Queue()\nthread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "thread_pool",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "thread_pool = asyncio.get_event_loop()\n# AWS Bedrock settings\nAWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_REGION",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "AWS_REGION = os.getenv(\"AWS_REGION\", \"us-east-1\")\nAWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_ACCESS_KEY_ID",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "AWS_ACCESS_KEY_ID = os.getenv(\"AWS_ACCESS_KEY_ID\")\nAWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "AWS_SECRET_ACCESS_KEY",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "AWS_SECRET_ACCESS_KEY = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\nBEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "BEDROCK_MODEL",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "BEDROCK_MODEL = os.getenv(\"BEDROCK_MODEL\", \"us.meta.llama3-2-3b-instruct-v1:0\")\n# Bedrock client setup\nbedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup\napp.add_middleware(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "bedrock_client",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "bedrock_client = boto3.client(\n    \"bedrock-runtime\",\n    region_name=AWS_REGION,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n)\n# CORS setup\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=os.getenv(\"ALLOWED_ORIGINS\", \"*\"),",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "context_manager",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "context_manager = ContextManager()\ndef format_prompt_with_context(text: str, language: str, context: str) -> str:\n    assistant_intro = f\"Je suis l'assistant de {company_name}. \" if company_name else \"Je suis votre assistant.\"\n    if language == \"fr\":\n        return f\"{assistant_intro}\\n\\n{text}\\n\\nMerci de répondre de manière concise et professionnelle en quelques phrases.\"\n    return f\"{assistant_intro}\\n\\n{text}\\n\\nAnswer concisely and professionally in a few sentences.\"\nasync def generate_bedrock_response(prompt: str) -> str:\n    try:\n        payload = {\"prompt\": prompt}\n        response = bedrock_client.invoke_model(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "user_language",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "user_language = {}  # Stores language preference per user session\nclass Query(BaseModel):\n    text: str\n    max_length: int = 10000\n    language: str = \"fr\"\n    file_names: Optional[List[str]] = None\n@app.post(\"/predict\")\nasync def predict(request: Request, query: Query):\n    try:\n        logger.info(f\"Received prediction request: {query.text[:50]}...\")",
+        "detail": "main",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Agent Service Client</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- En-tête -->
+        <header class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Interface Agent Service Client - Mistral-7B</h1>
+        </header>
+
+        <!-- Section Upload Fichier -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Upload des données d'entraînement</h2>
+            <form id="uploadForm" class="space-y-4">
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6">
+                    <input type="file" 
+                           id="trainingFile" 
+                           accept=".txt"
+                           class="w-full text-sm text-gray-500
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-full file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-blue-50 file:text-blue-700
+                                  hover:file:bg-blue-100">
+                </div>
+                <button type="submit" 
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Uploader le fichier
+                </button>
+            </form>
+            <div id="uploadStatus" class="mt-4 text-sm"></div>
+        </section>
+
+        <!-- Section Chat -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Chat Service Client</h2>
+            
+            <!-- Zone des messages -->
+            <div id="chatBox" class="h-96 border rounded-lg p-4 mb-4 overflow-y-auto space-y-4">
+                <!-- Les messages s'afficheront ici -->
+            </div>
+
+            <!-- Formulaire de message -->
+            <form id="chatForm" class="space-y-4">
+                <div>
+                    <textarea id="userMessage" 
+                             rows="3" 
+                             class="w-full p-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                             placeholder="Tapez votre message ici..."></textarea>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="space-x-2">
+                        <label class="text-sm text-gray-600">
+                            Température:
+                            <input type="number" 
+                                   id="temperature" 
+                                   value="0.7" 
+                                   min="0" 
+                                   max="1" 
+                                   step="0.1"
+                                   class="w-20 p-1 border rounded">
+                        </label>
+                        <label class="text-sm text-gray-600">
+                            Max Length:
+                            <input type="number" 
+                                   id="maxLength" 
+                                   value="2000" 
+                                   min="100" 
+                                   max="10000"
+                                   class="w-24 p-1 border rounded">
+                        </label>
+                    </div>
+                    <button type="submit" 
+                            class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section Logs -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mt-6">
+            <h2 class="text-xl font-semibold mb-4">Logs en temps réel</h2>
+            <div id="logsBox" class="h-48 border rounded-lg p-4 overflow-y-auto font-mono text-sm">
+                <!-- Les logs s'afficheront ici -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        const chatBox = document.getElementById('chatBox');
+        const logsBox = document.getElementById('logsBox');
+
+        // Gestion de l'upload de fichier
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('trainingFile');
+            const statusDiv = document.getElementById('uploadStatus');
+            
+            if (!fileInput.files[0]) {
+                statusDiv.innerHTML = '<p class="text-red-500">Veuillez sélectionner un fichier</p>';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                statusDiv.innerHTML = '<p class="text-blue-500">Upload en cours...</p>';
+                const response = await fetch(`${API_URL}/upload-customer-service-data`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    statusDiv.innerHTML = `
+                        <p class="text-green-500">
+                            Fichier uploadé avec succès! 
+                            ${data.conversations_count} conversations chargées.
+                        </p>`;
+                } else {
+                    throw new Error(data.detail || 'Erreur lors de l\'upload');
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `
+                    <p class="text-red-500">
+                        Erreur: ${error.message}
+                    </p>`;
+            }
+        });
+
+        // Gestion du chat
+        document.getElementById('chatForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const messageInput = document.getElementById('userMessage');
+            const temperature = document.getElementById('temperature').value;
+            const maxLength = document.getElementById('maxLength').value;
+
+            const userMessage = messageInput.value.trim();
+            if (!userMessage) return;
+
+            // Afficher le message utilisateur
+            appendMessage('user', userMessage);
+            messageInput.value = '';
+
+            try {
+                const response = await fetch(`${API_URL}/customer-service-response`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        text: userMessage,
+                        temperature: parseFloat(temperature),
+                        max_length: parseInt(maxLength),
+                        language: 'fr'
+                    })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    appendMessage('assistant', data.response);
+                } else {
+                    throw new Error(data.detail || 'Erreur lors de la génération de la réponse');
+                }
+            } catch (error) {
+                appendMessage('error', `Erreur: ${error.message}`);
+            }
+        });
+
+        // Fonction pour ajouter un message au chat
+        function appendMessage(type, content) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `p-3 rounded-lg ${
+                type === 'user' 
+                    ? 'bg-blue-100 ml-12' 
+                    : type === 'assistant'
+                        ? 'bg-green-100 mr-12'
+                        : 'bg-red-100'
+            }`;
+            
+            messageDiv.innerHTML = `
+                <p class="font-semibold mb-1">${
+                    type === 'user' 
+                        ? 'Vous' 
+                        : type === 'assistant'
+                            ? 'Assistant'
+                            : 'Erreur'
+                }</p>
+                <p class="text-gray-700">${content}</p>`;
+            
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Connexion aux logs en temps réel
+        const eventSource = new EventSource(`${API_URL}/logs`);
+        eventSource.onmessage = (event) => {
+            const logData = JSON.parse(event.data);
+            const logEntry = document.createElement('div');
+            logEntry.className = `text-xs ${
+                logData.level === 'ERROR' 
+                    ? 'text-red-500' 
+                    : 'text-gray-600'
+            }`;
+            logEntry.textContent = `[${logData.timestamp}] ${logData.level}: ${logData.message}`;
+            logsBox.appendChild(logEntry);
+            logsBox.scrollTop = logsBox.scrollHeight;
+        };
+    </script>
+</body>
+</html>

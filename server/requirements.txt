@@ -1,0 +1,10 @@
+fastapi
+pydantic
+pandas
+psutil
+python-dotenv
+PyMuPDF
+scikit-learn
+boto3
+uvicorn
+python-multipart
