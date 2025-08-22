@@ -467,5 +467,13 @@ async def startup_event():
 # Run FastAPI with uvicorn
 if __name__ == "__main__":
     import uvicorn
-    logger.info("Starting MTN AI server...")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    from dotenv import load_dotenv
+    
+    # Reload environment variables
+    load_dotenv()
+    
+    # Get port from environment variable or use default 8000
+    server_port = int(os.getenv("PORT", "8000"))
+    
+    logger.info(f"Starting MTN AI server on port {server_port}...")
+    uvicorn.run(app, host="0.0.0.0", port=server_port)
