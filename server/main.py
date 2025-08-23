@@ -2,7 +2,6 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, Request, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-import pandas as pd
 import os
 import shutil
 import queue
@@ -27,12 +26,11 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ServiceClientAI")
 
-app = FastAPI(title="Service Client AI Assistant API")
+app = FastAPI(title="MTN AI Assistant API")
 
 # Shared resources
-file_contents: Dict[str, pd.DataFrame] = {}
+file_contents: Dict[str, str] = {}
 company_name: Optional[str] = "MTN"
-mtn_packages_data: Optional[pd.DataFrame] = None
 mtn_knowledge_base: str = ""
 log_queue = queue.Queue()
 thread_pool = asyncio.get_event_loop()
@@ -92,68 +90,121 @@ class ContextManager:
             if file_name in self.document_vectors:
                 similarity = cosine_similarity(query_vector, self.document_vectors[file_name])[0][0]
                 if similarity > 0.1:  # Threshold for relevance
-                    content = file_contents[file_name]["text"].str.cat(sep=" ") if "text" in file_contents[file_name].columns else file_contents[file_name].to_string()
+                    content = file_contents[file_name]
                     relevant_parts.append(content[:max_length])
 
         return "\n\n".join(relevant_parts)
 
 context_manager = ContextManager()
 
-def format_mtn_prompt(text: str, language: str, context: str) -> str:
-    if language == "fr":
-        mtn_intro = """Je suis MTN AI, votre assistant intelligent MTN. Je peux vous aider avec :
-- Les forfaits MTN (data, voix, SMS)
-- Les codes USSD pour activer vos services
-- Les informations sur les prix et validités
-- Les services MTN Mobile Money
-- L'assistance technique MTN
+# Conversation memory and intelligence storage
+user_language = {}  # Stores language preference per user session
+user_conversations = {}  # Stores conversation history per user session
+user_preferences = {}  # Stores user preferences and patterns
 
-Question: {text}
-
-Contexte MTN: {context}
-
-Répondez de manière précise et utile en tant qu'assistant MTN officiel."""
-    else:
-        mtn_intro = """I am MTN AI, your intelligent MTN assistant. I can help you with:
-- MTN packages (data, voice, SMS)
-- USSD codes to activate services
-- Information about prices and validity
-- MTN Mobile Money services
-- MTN technical support
-
-Question: {text}
-
-MTN Context: {context}
-
-Respond accurately and helpfully as an official MTN assistant."""
+def detect_language(text: str) -> str:
+    """Détecte automatiquement la langue de la requête"""
+    french_words = ['bonjour', 'merci', 'forfait', 'internet', 'appel', 'sms', 'prix', 'code', 'usd', 'combien']
+    english_words = ['hello', 'thanks', 'package', 'internet', 'call', 'sms', 'price', 'code', 'ussd', 'how much']
     
-    return mtn_intro.format(text=text, context=context)
+    french_count = sum(1 for word in french_words if word in text.lower())
+    english_count = sum(1 for word in english_words if word in text.lower())
+    
+    return "fr" if french_count > english_count else "en"
+
+
+def format_mtn_prompt(text: str, language: str, context: str, conversation_history: str = "") -> str:
+    """Enhanced prompt with advanced intelligence and context awareness."""
+    
+    # Analyze the query to provide targeted instructions
+    intent = analyze_query_intent(text)
+    
+    if language == "fr":
+        # Build dynamic instructions based on intent
+        specific_instructions = ""
+        if intent['question_type'] == 'how_to':
+            specific_instructions = "\n🔧 FOCUS: Explique étape par étape la procédure d'activation avec les codes USSD exacts."
+        elif intent['question_type'] == 'pricing':
+            specific_instructions = "\n💰 FOCUS: Mets l'accent sur les prix exacts en FCFA et compare les options disponibles."
+        elif intent['question_type'] == 'activation_code':
+            specific_instructions = "\n📱 FOCUS: Fournis les codes USSD exacts à composer, avec la syntaxe complète."
+        elif intent['question_type'] == 'recommendation':
+            specific_instructions = "\n🎯 FOCUS: Analyse les besoins et recommande les meilleures options avec justification."
+        
+        urgency_note = ""
+        if intent['urgency'] == 'high':
+            urgency_note = "\n⚡ URGENT: Réponds de manière concise et directe avec l'information essentielle d'abord."
+        
+        mtn_intro = f"""Tu es MTN AI, l'assistant expert MTN avec une intelligence contextuelle avancée.
+
+🧠 CAPACITÉS COGNITIVES:
+1. Analyse automatique de l'intention utilisateur
+2. Compréhension des besoins implicites et contextuels
+3. Adaptation dynamique selon l'historique de conversation
+4. Recommandations personnalisées intelligentes
+5. Explication claire des procédures complexes
+6. Détection des urgences et priorités
+
+📋 RÈGLES DE FONCTIONNEMENT:
+- Utilise EXCLUSIVEMENT ta base de connaissances MTN ci-dessous
+- Analyse l'intention derrière chaque question
+- Réponds avec précision (prix exacts, codes USSD complets, durées)
+- Propose des alternatives pertinentes quand approprié
+- Structure tes réponses en markdown professionnel
+- Adapte ton niveau de détail selon le contexte{specific_instructions}{urgency_note}
+
+💬 HISTORIQUE DE CONVERSATION:
+{conversation_history}
+
+❓ QUESTION UTILISATEUR:
+{text}
+
+📚 BASE DE CONNAISSANCES MTN:
+{context}
+
+🎯 MISSION: Analyse l'intention, comprends le contexte, et fournis une réponse experte complète basée uniquement sur ta base de connaissances. Sois intelligent, précis et orienté solution."""
+    else:
+        mtn_intro = f"""I am MTN AI, your advanced intelligent MTN assistant with contextual understanding.
+
+🧠 COGNITIVE ABILITIES:
+1. Automatic user intent analysis
+2. Understanding of implicit needs and context
+3. Dynamic adaptation based on conversation history
+4. Intelligent personalized recommendations
+5. Clear explanation of complex procedures
+
+📋 OPERATING RULES:
+- Use EXCLUSIVELY your MTN knowledge base below
+- Analyze the intention behind each question
+- Respond with precision (exact prices, complete USSD codes, durations)
+- Propose relevant alternatives when appropriate
+- Structure responses in professional markdown
+
+💬 CONVERSATION HISTORY:
+{conversation_history}
+
+❓ USER QUESTION:
+{text}
+
+📚 MTN KNOWLEDGE BASE:
+{context}
+
+🎯 MISSION: Analyze intent, understand context, and provide expert complete response based solely on your knowledge base."""
+    
+    return mtn_intro.format(text=text, context=context, conversation_history=conversation_history)
 
 def load_mtn_knowledge():
-    """Load MTN packages and knowledge base data"""
-    global mtn_packages_data, mtn_knowledge_base
+    """Load MTN knowledge base data from card.txt only"""
+    global mtn_knowledge_base
     
     try:
-        # Construct absolute paths to the knowledge files
+        # Construct absolute path to the knowledge file
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        excel_path = os.path.join(base_dir, "Forfaits_MTN_Codes_USSD_2025-08-22.xlsx")
         card_path = os.path.join(base_dir, "temp_data", "card.txt")
-
-        # Verify files exist
-        if not os.path.exists(excel_path):
-            logger.error(f"Excel file not found: {excel_path}")
-            return False
             
         if not os.path.exists(card_path):
-            logger.error(f"Card file not found: {card_path}")
+            logger.error(f"Knowledge base file not found: {card_path}")
             return False
-
-        # Load MTN packages Excel file
-        mtn_packages_data = pd.read_excel(excel_path)
-        logger.info(f"✅ Loaded {len(mtn_packages_data)} MTN packages from {excel_path}")
-        
-        # Display column names for debugging
-        logger.info(f"Excel columns: {list(mtn_packages_data.columns)}")
         
         # Load MTN knowledge base text
         with open(card_path, "r", encoding="utf-8") as f:
@@ -166,65 +217,226 @@ def load_mtn_knowledge():
         logger.error(f"❌ Error loading MTN knowledge: {str(e)}")
         return False
 
-def search_mtn_packages(query: str, country: str = None) -> str:
-    """Search MTN packages based on query with improved keyword matching."""
-    if mtn_packages_data is None:
-        logger.warning("MTN packages data not loaded - attempting to reload")
-        if not load_mtn_knowledge():
-            return "❌ Base de données MTN non disponible."
-    
-    if mtn_packages_data is None or len(mtn_packages_data) == 0:
-        return "❌ Aucune donnée MTN trouvée."
-
+def analyze_query_intent(query: str) -> dict:
+    """Analyze user query to understand intent and extract key parameters."""
     query_lower = query.lower()
-    # Extract keywords like '1 jour', '7 jours', '30 jours', 'internet', 'voix'
-    keywords = re.findall(r'\b(\d+\s*jour[s]?|internet|data|voix|appel[s]?|sms)\b', query_lower)
+    intent = {
+        'service_type': None,
+        'price_range': None,
+        'duration': None,
+        'volume': None,
+        'special_features': [],
+        'question_type': 'general',
+        'urgency': 'normal'
+    }
+    
+    # Detect service type
+    if any(word in query_lower for word in ['internet', 'data', 'web', 'navigation', 'connexion', 'mb', 'gb', 'ko', 'mega', 'giga']):
+        intent['service_type'] = 'internet'
+    elif any(word in query_lower for word in ['sms', 'message', 'texto', 'msg']):
+        intent['service_type'] = 'sms'
+    elif any(word in query_lower for word in ['appel', 'call', 'voix', 'voice', 'minute', 'communication']):
+        intent['service_type'] = 'appel'
+    elif any(word in query_lower for word in ['combo', 'pack', 'bundle', 'hybride', 'mix']):
+        intent['service_type'] = 'hybrid'
+    
+    # Detect question type
+    if any(word in query_lower for word in ['comment', 'how', 'procédure', 'étapes', 'activer']):
+        intent['question_type'] = 'how_to'
+    elif any(word in query_lower for word in ['combien', 'prix', 'coût', 'tarif', 'how much', 'cost']):
+        intent['question_type'] = 'pricing'
+    elif any(word in query_lower for word in ['code', 'ussd', 'numéro', 'composer']):
+        intent['question_type'] = 'activation_code'
+    elif any(word in query_lower for word in ['meilleur', 'recommande', 'conseille', 'best', 'recommend']):
+        intent['question_type'] = 'recommendation'
+    
+    # Detect special features
+    if any(word in query_lower for word in ['whatsapp', 'facebook', 'instagram', 'tiktok', 'social']):
+        intent['special_features'].append('social')
+    if any(word in query_lower for word in ['jeune', 'widge', 'youth', 'student', 'étudiant']):
+        intent['special_features'].append('youth')
+    if any(word in query_lower for word in ['weekend', 'week-end', 'samedi', 'dimanche']):
+        intent['special_features'].append('weekend')
+    if any(word in query_lower for word in ['nuit', 'night', 'nocturne']):
+        intent['special_features'].append('night')
+    
+    # Extract price range
+    import re
+    price_match = re.search(r'(\d+)\s*(fcfa|f|franc)', query_lower)
+    if price_match:
+        intent['price_range'] = int(price_match.group(1))
+    
+    # Extract volume
+    volume_match = re.search(r'(\d+)\s*(mo|go|gb|mb|ko)', query_lower)
+    if volume_match:
+        intent['volume'] = f"{volume_match.group(1)}{volume_match.group(2)}"
+    
+    # Detect urgency
+    if any(word in query_lower for word in ['urgent', 'rapidement', 'vite', 'maintenant', 'immédiatement']):
+        intent['urgency'] = 'high'
+    
+    return intent
 
-    df = mtn_packages_data
-    if country:
-        df = df[df['Pays'].str.lower() == country.lower()]
-
-    # If no specific keywords, do a broad search
-    if not keywords:
-        mask = (
-            df['Nom Forfait'].str.lower().str.contains(query_lower, na=False) |
-            df['Description'].str.lower().str.contains(query_lower, na=False)
-        )
-        matching_packages = df[mask]
-    else:
-        # Filter based on keywords
-        mask = pd.Series([True] * len(df), index=df.index)
+def search_mtn_knowledge(query: str) -> str:
+    """Enhanced intelligent search with intent analysis and contextual understanding."""
+    if not mtn_knowledge_base:
+        logger.warning("MTN knowledge base not loaded - attempting to reload")
+        if not load_mtn_knowledge():
+            return "❌ Base de connaissances MTN non disponible."
+    
+    query_lower = query.lower()
+    lines = mtn_knowledge_base.split('\n')
+    
+    # Analyze query intent
+    intent = analyze_query_intent(query)
+    
+    # Enhanced keyword mapping with context awareness
+    keyword_mapping = {
+        'forfait': ['forfait', 'package', 'plan', 'abonnement', 'offre', 'bundle', 'service'],
+        'internet': ['internet', 'data', 'web', 'navigation', 'connexion', 'mb', 'gb', 'ko', 'mega', 'giga', 'net', 'wifi'],
+        'sms': ['sms', 'message', 'texto', 'msg', 'messages', 'texto'],
+        'appel': ['appel', 'call', 'voix', 'voice', 'minute', 'min', 'talk', 'communication', 'téléphone'],
+        'code': ['code', 'ussd', 'activation', 'composer', 'numéro', 'dial', '*', '#'],
+        'prix': ['prix', 'price', 'coût', 'fcfa', 'tarif', 'montant', 'argent', 'payer', 'gratuit'],
+        'durée': ['durée', 'validité', 'temps', 'jour', 'jours', 'semaine', 'mois', 'heure', 'h', 'expire'],
+        'social': ['whatsapp', 'facebook', 'instagram', 'tiktok', 'social', 'réseau', 'wa', 'fb', 'ig'],
+        'jeune': ['jeune', 'widge', 'youth', 'student', 'étudiant', 'école', 'université'],
+        'weekend': ['weekend', 'week-end', 'samedi', 'dimanche', 'vsd', 'fin de semaine'],
+        'nuit': ['nuit', 'night', 'nocturne', '23h', '6h', 'minuit', 'soir'],
+        'hybrid': ['hybrid', 'hybride', 'mix', 'combo', 'combiné', 'tout-en-un'],
+        'partage': ['partage', 'share', 'famille', 'group', 'groupe', 'ami'],
+        'activation': ['activer', 'activate', 'comment', 'procédure', 'étapes', 'how'],
+        'mobile_money': ['mobile money', 'momo', 'transfert', 'argent', 'paiement', 'transaction']
+    }
+    
+    # Detect categories with intent-based weighting
+    detected_categories = []
+    category_weights = {}
+    
+    for category, keywords in keyword_mapping.items():
+        weight = 0
         for keyword in keywords:
-            # Normalize '1 jour' to '24h' or '1 jour' for better matching in 'Validité'
-            if 'jour' in keyword:
-                day_search = keyword.split()[0]
-                if day_search == '1':
-                    period_mask = df['Validité'].str.contains('24h', case=False, na=False) | df['Validité'].str.contains('1 jour', case=False, na=False)
+            if keyword in query_lower:
+                # Higher weight for exact service type matches
+                if category == intent['service_type']:
+                    weight += 3
+                elif category in intent['special_features']:
+                    weight += 2
                 else:
-                    period_mask = df['Validité'].str.contains(day_search, case=False, na=False)
-                mask &= period_mask
-            else:
-                # Search in name, description, and type for other keywords
-                mask &= (
-                    df['Nom Forfait'].str.lower().str.contains(keyword, na=False) |
-                    df['Description'].str.lower().str.contains(keyword, na=False) |
-                    df['Type Service'].str.lower().str.contains(keyword, na=False)
-                )
-        matching_packages = df[mask]
-
-    results = []
-    for _, package in matching_packages.head(5).iterrows():
-        result = f"""
-### 📱 {package['Nom Forfait']} ({package['Pays']})
-- **💰 Prix:** {package['Prix (FCFA/NGN/GHS/UGX/ZAR)']}
-- **📊 Volume:** {package['Volume/Minutes']}
-- **⏰ Validité:** {package['Validité']}
-- **📞 Code USSD:** `{package['Code USSD']}`
-- **ℹ️ Description:** {package['Description']}
-        """
-        results.append(result.strip())
-
-    return "\n\n".join(results) if results else ""
+                    weight += 1
+        
+        if weight > 0:
+            detected_categories.append(category)
+            category_weights[category] = weight
+    
+    # Smart section extraction with intent awareness
+    relevant_sections = []
+    current_section = []
+    in_table = False
+    section_relevance_score = 0
+    context_buffer = []  # Store context around relevant sections
+    
+    for i, line in enumerate(lines):
+        line_lower = line.lower()
+        line_relevance = 0
+        
+        # Calculate line relevance with intent-based scoring
+        for category in detected_categories:
+            category_weight = category_weights.get(category, 1)
+            for keyword in keyword_mapping[category]:
+                if keyword in line_lower:
+                    line_relevance += category_weight
+        
+        # Special scoring for tables and headers
+        if '|' in line:
+            if any(keyword in line_lower for keyword in ['forfait', 'code', 'prix', 'ussd', 'volume']):
+                line_relevance += 4
+                in_table = True
+            elif in_table:
+                line_relevance += 3
+        elif line.startswith('#'):
+            header_relevance = sum(2 for cat in detected_categories if any(kw in line_lower for kw in keyword_mapping[cat]))
+            line_relevance += header_relevance + 2
+        
+        # Intent-specific boosting
+        if intent['question_type'] == 'activation_code' and any(code_word in line_lower for code_word in ['*', '#', 'composer', 'dial']):
+            line_relevance += 3
+        elif intent['question_type'] == 'pricing' and any(price_word in line_lower for price_word in ['fcfa', 'prix', 'gratuit', 'coût']):
+            line_relevance += 3
+        elif intent['question_type'] == 'how_to' and any(how_word in line_lower for how_word in ['comment', 'étapes', 'procédure', 'activer']):
+            line_relevance += 3
+        
+        # Include relevant lines with context
+        if line_relevance > 0:
+            # Add context from previous lines if starting new section
+            if not current_section and i > 0:
+                for j in range(max(0, i-2), i):
+                    if lines[j].strip() and not lines[j] in current_section:
+                        current_section.append(lines[j])
+            
+            current_section.append(line)
+            section_relevance_score += line_relevance
+            
+            # Add context from next lines for tables
+            if in_table and i < len(lines) - 1:
+                next_line = lines[i + 1]
+                if '|' in next_line and next_line not in current_section:
+                    current_section.append(next_line)
+        
+        elif current_section and (line.strip() == '' or (not in_table and line_relevance == 0)):
+            if section_relevance_score > 1:  # Lower threshold for better coverage
+                relevant_sections.extend(current_section)
+                relevant_sections.append('')  # Add separator
+            current_section = []
+            section_relevance_score = 0
+            in_table = False
+    
+    # Add final section if relevant
+    if current_section and section_relevance_score > 1:
+        relevant_sections.extend(current_section)
+    
+    # Enhanced fallback with intent-based search
+    if not relevant_sections or len(relevant_sections) < 5:
+        logger.info(f"Using fallback search for query: {query}")
+        words = [w for w in query_lower.split() if len(w) > 2]
+        fallback_sections = []
+        
+        # Priority search based on intent
+        priority_keywords = []
+        if intent['service_type']:
+            priority_keywords.extend(keyword_mapping.get(intent['service_type'], []))
+        if intent['question_type'] == 'activation_code':
+            priority_keywords.extend(['code', 'ussd', '*', '#', 'composer'])
+        elif intent['question_type'] == 'pricing':
+            priority_keywords.extend(['prix', 'fcfa', 'coût', 'gratuit'])
+        
+        for line in lines:
+            line_lower = line.lower()
+            
+            # Score line based on word matches and priority
+            word_score = sum(1 for word in words if word in line_lower)
+            priority_score = sum(2 for keyword in priority_keywords if keyword in line_lower)
+            table_score = 2 if '|' in line else 0
+            header_score = 1 if line.startswith('#') else 0
+            
+            total_score = word_score + priority_score + table_score + header_score
+            
+            if total_score > 0:
+                fallback_sections.append((line, total_score))
+        
+        # Sort by score and take top results
+        fallback_sections.sort(key=lambda x: x[1], reverse=True)
+        selected_lines = [line for line, score in fallback_sections[:150]]
+        
+        if selected_lines:
+            return '\n'.join(selected_lines)
+        else:
+            # Last resort: return general MTN information
+            return mtn_knowledge_base[:3000]
+    
+    result = '\n'.join(relevant_sections)
+    logger.info(f"Found {len(relevant_sections)} relevant lines for query: {query[:50]}...")
+    return result
 
 async def generate_gemini_response_stream(prompt: str, websocket: WebSocket):
     """Generate streaming response from Gemini and send via WebSocket"""
@@ -278,7 +490,7 @@ async def generate_gemini_response(prompt: str) -> str:
             prompt,
             generation_config={
                 "max_output_tokens": 2048,
-                "temperature": 0.3,  # Lower temperature for more consistent MTN responses
+                "temperature": 0.3,
                 "top_p": 0.9,
             }
         )
@@ -286,21 +498,6 @@ async def generate_gemini_response(prompt: str) -> str:
     except Exception as e:
         logger.error(f"Error in Gemini inference: {str(e)}")
         raise
-
-async def generate_bedrock_response(prompt: str) -> str:
-    try:
-        response_text = await generate_gemini_response(prompt)
-        response_text = re.sub(r'^(Réponse:|Response:)\s*', '', response_text, flags=re.IGNORECASE)
-        
-        # Limiter à la première phrase ou aux deux premières phrases
-        sentences = re.split(r'(?<=[.!?])\s+', response_text)
-        concise_response = ' '.join(sentences[:2]).strip()
-        
-        return concise_response if concise_response else "Je suis désolé, je ne peux pas répondre à cette question."
-    except Exception as e:
-        logger.error(f"Error in Bedrock inference: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Bedrock error: {str(e)}")
-user_language = {}  # Stores language preference per user session
 
 class Query(BaseModel):
     text: str
@@ -310,50 +507,59 @@ class Query(BaseModel):
 
 @app.post("/predict")
 async def predict(request: Request, query: Query):
+    global user_language, user_conversations
+    
+    client_ip = request.client.host
+    
+    # Détection automatique de la langue si non spécifiée
+    if not query.language:
+        query.language = detect_language(query.text)
+    user_language[client_ip] = query.language
+    
+    if client_ip not in user_conversations:
+        user_conversations[client_ip] = []
+    
     try:
-        logger.info(f"Received MTN AI request: {query.text[:50]}...")
+        logger.info(f"Received MTN AI request: {query.text}")
         
-        # Get or set user's language preference
-        session_id = request.client.host
-        user_language[session_id] = query.language
+        # Search MTN knowledge base for relevant information
+        mtn_context = search_mtn_knowledge(query.text)
         
-        # Search MTN packages for relevant information
-        mtn_context = search_mtn_packages(query.text)
+        # Préparation de l'historique de conversation
+        conversation_history = ""
+        if user_conversations[client_ip]:
+            recent_history = user_conversations[client_ip][-10:]
+            conversation_history = "\n".join([
+                f"{'Utilisateur' if i % 2 == 0 else 'Assistant'}: {msg}" 
+                for i, msg in enumerate(recent_history)
+            ])
         
-        # Add general MTN knowledge base context
-        general_context = mtn_knowledge_base[:1000] if mtn_knowledge_base else ""
+        # Format the prompt with MTN context
+        prompt = format_mtn_prompt(query.text, query.language, mtn_context, conversation_history)
         
-        # Combine contexts
-        full_context = f"{mtn_context}\n\n{general_context}"
-        
-        # If specific packages are found, present them directly.
-        # Otherwise, use the general knowledge base for a broader answer.
-        if mtn_context:
-            prompt = f"""En tant qu'assistant MTN, réponds à la question de l'utilisateur en te basant sur les forfaits suivants que j'ai trouvés. Utilise le format markdown pour une présentation claire et organisée.
-
-Question: {query.text}
-
-Forfaits trouvés:
-{mtn_context}
-
-Réponds en markdown avec une structure claire incluant des titres, listes et mise en forme appropriée."""
-        else:
-            # Format a general prompt if no specific packages are found
-            general_context = mtn_knowledge_base[:1500] if mtn_knowledge_base else ""
-            prompt = format_mtn_prompt(query.text, query.language, general_context)
-
         # Generate response using Gemini
         response = await generate_gemini_response(prompt)
         
         # Clean up the response
         response = re.sub(r'^(Réponse:|Response:)\s*', '', response, flags=re.IGNORECASE)
         
-        logger.info(f"MTN AI response generated successfully")
+        # Mise à jour de l'historique
+        user_conversations[client_ip].append(query.text)
+        user_conversations[client_ip].append(response)
+        
+        if len(user_conversations[client_ip]) > 20:
+            user_conversations[client_ip] = user_conversations[client_ip][-20:]
+        
+        logger.info("MTN AI response generated successfully")
         return {"response": response}
         
     except Exception as e:
-        logger.error(f"Error in MTN AI prediction: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Error in predict endpoint: {str(e)}")
+        return {
+            "response": "Désolé, une erreur s'est produite. Veuillez réessayer.",
+            "error": str(e),
+            "language": query.language
+        }
 
 @app.post("/upload-training-data")
 async def upload_training_data(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
@@ -364,28 +570,25 @@ async def upload_training_data(background_tasks: BackgroundTasks, file: UploadFi
         file_path = f"temp_data/{file.filename}"
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
-        data = await process_file_content(file_path, file.filename)
-        file_contents[file.filename] = data
-        text_content = data["text"].str.cat(sep=" ") if "text" in data.columns else data.to_string()
+        text_content = await process_file_content(file_path, file.filename)
+        file_contents[file.filename] = text_content
         background_tasks.add_task(context_manager.update_vectors, file.filename, text_content)
-        if "text" in data.columns:
-            company_name = extract_company_name(text_content) or company_name
+        company_name = extract_company_name(text_content) or company_name
         return {"message": "File uploaded and processed successfully", "filename": file.filename, "company_name": company_name}
     except Exception as e:
         logger.error(f"Error in file upload: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-async def process_file_content(file_path: str, file_name: str) -> pd.DataFrame:
+async def process_file_content(file_path: str, file_name: str) -> str:
     if file_name.endswith(".csv"):
-        return pd.read_csv(file_path)
+        with open(file_path, "r") as f:
+            return f.read()
     elif file_name.endswith(".txt"):
         with open(file_path, "r") as f:
-            text_content = f.read()
-        return pd.DataFrame({"text": text_content.splitlines()})
+            return f.read()
     elif file_name.endswith(".pdf"):
         with fitz.open(file_path) as doc:
-            text = "\n".join(page.get_text() for page in doc)
-        return pd.DataFrame({"text": text.splitlines()})
+            return "\n".join(page.get_text() for page in doc)
     else:
         raise ValueError("Unsupported file format")
 
@@ -412,7 +615,6 @@ async def stream_logs():
 
     return StreamingResponse(log_stream(), media_type="text/event-stream")
 
-# Initialize MTN knowledge on startup
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
@@ -422,28 +624,17 @@ async def websocket_endpoint(websocket: WebSocket):
             
             if data["type"] == "chat":
                 query_text = data["text"]
-                language = data.get("language", "fr")
+                language = data.get("language", detect_language(query_text))
                 
-                logger.info(f"WebSocket MTN AI request: {query_text[:50]}...")
+                logger.info(f"WebSocket MTN AI request: {query_text}")
                 
-                # Search MTN packages for relevant information
-                mtn_context = search_mtn_packages(query_text)
+                # Search MTN knowledge base for relevant information
+                mtn_context = search_mtn_knowledge(query_text)
                 
-                # Generate prompt based on context
-                if mtn_context:
-                    prompt = f"""En tant qu'assistant MTN, réponds à la question de l'utilisateur en te basant sur les forfaits suivants que j'ai trouvés. Utilise le format markdown pour une présentation claire et organisée.
-
-Question: {query_text}
-
-Forfaits trouvés:
-{mtn_context}
-
-Réponds en markdown avec une structure claire incluant des titres, listes et mise en forme appropriée."""
-                else:
-                    general_context = mtn_knowledge_base[:1500] if mtn_knowledge_base else ""
-                    prompt = format_mtn_prompt(query_text, language, general_context)
-
-                # Generate streaming response
+                # Enhanced prompt for streaming with intent analysis
+                intent = analyze_query_intent(query_text)
+                prompt = format_mtn_prompt(query_text, language, mtn_context, "")
+                
                 await generate_gemini_response_stream(prompt, websocket)
                 
     except WebSocketDisconnect:
@@ -452,7 +643,7 @@ Réponds en markdown avec une structure claire incluant des titres, listes et mi
         logger.error(f"WebSocket error: {str(e)}")
         await websocket.send_json({
             "type": "error",
-            "content": f"Erreur de connexion: {str(e)}"
+            "content": f"Erreur: {str(e)}"
         })
 
 @app.on_event("startup")

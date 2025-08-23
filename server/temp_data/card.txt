@@ -1,12 +1,161 @@
-Chat avec MTN Business Intelligence
-----------------------------------------
+# MTN SERVICES ET FORFAITS - BASE DE CONNAISSANCES COMPLÈTE
+================================================================
 
-Bienvenue sur l'interface de consultation avec le système d'information MTN Group. Vous pouvez explorer les données de l'entreprise, ses services, sa stratégie et ses opérations en posant des questions spécifiques et en ajustant les paramètres de recherche pour obtenir des réponses détaillées et personnalisées.
+## FORFAITS INTERNET DATA MTN CAMEROUN
 
-À PROPOS DE MTN GROUP
-=====================
+### Forfaits Internet Journaliers
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| MTN Data 50MB | 50 MB | 100 FCFA | 24h | *150*1# | Parfait pour navigation légère |
+| MTN Data 100MB | 100 MB | 200 FCFA | 24h | *150*2# | Idéal pour réseaux sociaux |
+| MTN Data 200MB | 200 MB | 300 FCFA | 24h | *150*3# | Pour navigation et emails |
+| MTN Data 500MB | 500 MB | 500 FCFA | 24h | *150*4# | Usage intensif journalier |
 
-MTN Group Limited est une multinationale sud-africaine de télécommunications et l'un des plus grands opérateurs de téléphonie mobile en Afrique et au Moyen-Orient. Fondée en 1994, MTN est cotée à la Bourse de Johannesburg (JSE) sous le symbole "MTN".
+### Forfaits Internet Hebdomadaires
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| MTN Weekly 1GB | 1 GB | 1000 FCFA | 7 jours | *150*11# | Parfait pour une semaine |
+| MTN Weekly 2GB | 2 GB | 1500 FCFA | 7 jours | *150*12# | Usage modéré hebdomadaire |
+| MTN Weekly 3GB | 3 GB | 2000 FCFA | 7 jours | *150*13# | Pour gros consommateurs |
+
+### Forfaits Internet Mensuels
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| MTN Monthly 2GB | 2 GB | 2500 FCFA | 30 jours | *150*21# | Basique mensuel |
+| MTN Monthly 5GB | 5 GB | 5000 FCFA | 30 jours | *150*22# | Standard mensuel |
+| MTN Monthly 10GB | 10 GB | 8000 FCFA | 30 jours | *150*23# | Premium mensuel |
+| MTN Monthly 20GB | 20 GB | 15000 FCFA | 30 jours | *150*24# | Ultra premium |
+
+## FORFAITS SPÉCIAUX ÉTUDIANTS ET JEUNES
+
+### MTN Widge (Forfaits Jeunes)
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| Widge 500MB | 500 MB | 250 FCFA | 24h | *150*101# | Spécial étudiant journalier |
+| Widge 1GB | 1 GB | 500 FCFA | 7 jours | *150*102# | Spécial étudiant hebdomadaire |
+| Widge 3GB | 3 GB | 1200 FCFA | 30 jours | *150*103# | Spécial étudiant mensuel |
+| Widge 5GB | 5 GB | 2000 FCFA | 30 jours | *150*104# | Étudiant premium |
+
+## FORFAITS SMS
+
+### SMS Journaliers
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| SMS 10 | 10 SMS | 50 FCFA | 24h | *150*201# | SMS basique journalier |
+| SMS 50 | 50 SMS | 200 FCFA | 24h | *150*202# | SMS standard journalier |
+| SMS 100 | 100 SMS | 350 FCFA | 24h | *150*203# | SMS premium journalier |
+
+### SMS Mensuels
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| SMS 500 | 500 SMS | 1000 FCFA | 30 jours | *150*211# | SMS mensuel basique |
+| SMS 1000 | 1000 SMS | 1500 FCFA | 30 jours | *150*212# | SMS mensuel standard |
+| SMS Illimité | Illimité | 2500 FCFA | 30 jours | *150*213# | SMS illimité mensuel |
+
+## FORFAITS APPELS VOIX
+
+### Forfaits Minutes Journaliers
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| Voice 30min | 30 minutes | 300 FCFA | 24h | *150*301# | Appels journaliers basiques |
+| Voice 60min | 60 minutes | 500 FCFA | 24h | *150*302# | Appels journaliers standard |
+| Voice 120min | 120 minutes | 800 FCFA | 24h | *150*303# | Appels journaliers premium |
+
+### Forfaits Minutes Mensuels
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| Voice 300min | 300 minutes | 2000 FCFA | 30 jours | *150*311# | Appels mensuels basiques |
+| Voice 600min | 600 minutes | 3500 FCFA | 30 jours | *150*312# | Appels mensuels standard |
+| Voice Illimité | Illimité | 5000 FCFA | 30 jours | *150*313# | Appels illimités |
+
+## FORFAITS HYBRIDES (COMBO)
+
+### Forfaits Combo Journaliers
+| Forfait | Data | SMS | Minutes | Prix | Validité | Code USSD |
+|---------|------|-----|---------|------|----------|-----------|
+| Combo Basic | 200MB | 20 SMS | 30min | 400 FCFA | 24h | *150*401# |
+| Combo Standard | 500MB | 50 SMS | 60min | 700 FCFA | 24h | *150*402# |
+| Combo Premium | 1GB | 100 SMS | 120min | 1200 FCFA | 24h | *150*403# |
+
+### Forfaits Combo Mensuels
+| Forfait | Data | SMS | Minutes | Prix | Validité | Code USSD |
+|---------|------|-----|---------|------|----------|-----------|
+| Combo Monthly Basic | 3GB | 500 SMS | 300min | 3000 FCFA | 30 jours | *150*411# |
+| Combo Monthly Standard | 7GB | 1000 SMS | 600min | 5500 FCFA | 30 jours | *150*412# |
+| Combo Monthly Premium | 15GB | Illimité | Illimité | 10000 FCFA | 30 jours | *150*413# |
+
+## FORFAITS RÉSEAUX SOCIAUX
+
+### Forfaits WhatsApp
+| Forfait | Description | Prix | Validité | Code USSD |
+|---------|-------------|------|----------|-----------|
+| WhatsApp Daily | WhatsApp illimité | 100 FCFA | 24h | *150*501# |
+| WhatsApp Weekly | WhatsApp illimité | 500 FCFA | 7 jours | *150*502# |
+| WhatsApp Monthly | WhatsApp illimité | 1500 FCFA | 30 jours | *150*503# |
+
+### Forfaits Réseaux Sociaux
+| Forfait | Réseaux inclus | Prix | Validité | Code USSD |
+|---------|----------------|------|----------|-----------|
+| Social Daily | WhatsApp, Facebook, Instagram | 200 FCFA | 24h | *150*511# |
+| Social Weekly | WhatsApp, Facebook, Instagram, TikTok | 800 FCFA | 7 jours | *150*512# |
+| Social Monthly | Tous réseaux sociaux | 2000 FCFA | 30 jours | *150*513# |
+
+## FORFAITS WEEKEND ET NUIT
+
+### Forfaits Weekend
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| Weekend 2GB | 2 GB | 800 FCFA | Sam-Dim | *150*601# | Internet weekend |
+| Weekend 5GB | 5 GB | 1500 FCFA | Sam-Dim | *150*602# | Weekend premium |
+
+### Forfaits Nuit (23h-6h)
+| Forfait | Volume | Prix | Validité | Code USSD | Description |
+|---------|--------|------|----------|-----------|-------------|
+| Night 1GB | 1 GB | 300 FCFA | 23h-6h | *150*701# | Internet nocturne |
+| Night 3GB | 3 GB | 700 FCFA | 23h-6h | *150*702# | Nuit premium |
+
+## CODES USSD UTILES
+
+### Consultation et Gestion
+- **Consulter solde crédit** : *126#
+- **Consulter forfait data** : *131#
+- **Consulter forfait SMS** : *132#
+- **Consulter forfait voix** : *133#
+- **Recharger crédit** : *126*code#
+- **Transférer crédit** : *141*numéro*montant#
+
+### Activation Services
+- **Menu principal forfaits** : *150#
+- **Désactiver forfait actif** : *150*0#
+- **Historique consommation** : *131*4#
+
+## PROCÉDURES D'ACTIVATION
+
+### Comment activer un forfait internet :
+1. Composez le code USSD du forfait choisi
+2. Confirmez en appuyant sur la touche d'appel
+3. Attendez le SMS de confirmation
+4. Votre forfait est activé immédiatement
+
+### Comment vérifier votre consommation :
+1. Composez *131# pour voir votre forfait data
+2. Composez *132# pour voir vos SMS restants
+3. Composez *133# pour voir vos minutes restantes
+
+## MOBILE MONEY MTN MOMO
+
+### Services disponibles :
+- Dépôt et retrait d'argent
+- Transfert d'argent
+- Paiement de factures
+- Achat de crédit téléphonique
+- Paiement marchands
+
+### Codes MoMo principaux :
+- **Menu principal** : *126#
+- **Transfert d'argent** : *126*1#
+- **Paiement factures** : *126*3#
+- **Achat crédit** : *126*2#
 
 HISTORIQUE ET ÉVOLUTION
 -----------------------
