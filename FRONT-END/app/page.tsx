@@ -414,14 +414,14 @@ export default function ChatInterface() {
                                 remarkPlugins={[remarkGfm]}
                                 rehypePlugins={[rehypeHighlight]}
                                 components={{
-                                  h1: ({node, ...props}) => <h1 className="text-lg font-bold text-emerald-400 mb-2" {...props} />,
-                                  h2: ({node, ...props}) => <h2 className="text-md font-semibold text-emerald-300 mb-2" {...props} />,
-                                  h3: ({node, ...props}) => <h3 className="text-sm font-semibold text-emerald-200 mb-1" {...props} />,
-                                  p: ({node, ...props}) => <p className="text-gray-200 mb-2" {...props} />,
-                                  ul: ({node, ...props}) => <ul className="list-disc list-inside text-gray-200 mb-2 space-y-1" {...props} />,
-                                  ol: ({node, ...props}) => <ol className="list-decimal list-inside text-gray-200 mb-2 space-y-1" {...props} />,
-                                  li: ({node, ...props}) => <li className="text-gray-200" {...props} />,
-                                  code: ({node, className, children, ...props}) => {
+                                  h1: (props) => <h1 className="text-lg font-bold text-emerald-400 mb-2" {...props} />,
+                                  h2: (props) => <h2 className="text-md font-semibold text-emerald-300 mb-2" {...props} />,
+                                  h3: (props) => <h3 className="text-sm font-semibold text-emerald-200 mb-1" {...props} />,
+                                  p: (props) => <p className="text-gray-200 mb-2" {...props} />,
+                                  ul: (props) => <ul className="list-disc list-inside text-gray-200 mb-2 space-y-1" {...props} />,
+                                  ol: (props) => <ol className="list-decimal list-inside text-gray-200 mb-2 space-y-1" {...props} />,
+                                  li: ({ ...props}) => <li className="text-gray-200" {...props} />,
+                                  code: ({ className, children, ...props}) => {
                                     const match = /language-(\w+)/.exec(className || '');
                                     return match ? (
                                       <code className={cn(className, "block bg-gray-800 text-gray-200 p-2 rounded text-xs font-mono overflow-x-auto")} {...props}>
@@ -433,10 +433,10 @@ export default function ChatInterface() {
                                       </code>
                                     );
                                   },
-                                  pre: ({node, ...props}) => <pre className="bg-gray-800 p-2 rounded overflow-x-auto mb-2" {...props} />,
-                                  strong: ({node, ...props}) => <strong className="font-semibold text-emerald-300" {...props} />,
-                                  em: ({node, ...props}) => <em className="italic text-gray-300" {...props} />,
-                                  blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-emerald-500 pl-4 italic text-gray-300 mb-2" {...props} />,
+                                  pre: (props) => <pre className="bg-gray-800 p-2 rounded overflow-x-auto mb-2" {...props} />,
+                                  strong: (props) => <strong className="font-semibold text-emerald-300" {...props} />,
+                                  em: (props) => <em className="italic text-gray-300" {...props} />,
+                                  blockquote: (props) => <blockquote className="border-l-4 border-emerald-500 pl-4 italic text-gray-300 mb-2" {...props} />,
                                 }}
                               >
                                 {message.content}
@@ -464,14 +464,14 @@ export default function ChatInterface() {
                               remarkPlugins={[remarkGfm]}
                               rehypePlugins={[rehypeHighlight]}
                               components={{
-                                h1: ({node, ...props}) => <h1 className="text-lg font-bold text-emerald-400 mb-2" {...props} />,
-                                h2: ({node, ...props}) => <h2 className="text-md font-semibold text-emerald-300 mb-2" {...props} />,
-                                h3: ({node, ...props}) => <h3 className="text-sm font-semibold text-emerald-200 mb-1" {...props} />,
-                                p: ({node, ...props}) => <p className="text-gray-200 mb-2" {...props} />,
-                                ul: ({node, ...props}) => <ul className="list-disc list-inside text-gray-200 mb-2 space-y-1" {...props} />,
-                                ol: ({node, ...props}) => <ol className="list-decimal list-inside text-gray-200 mb-2 space-y-1" {...props} />,
-                                li: ({node, ...props}) => <li className="text-gray-200" {...props} />,
-                                code: ({node, className, children, ...props}) => {
+                                h1: ({ ...props}) => <h1 className="text-lg font-bold text-emerald-400 mb-2" {...props} />,
+                                h2: ({ ...props}) => <h2 className="text-md font-semibold text-emerald-300 mb-2" {...props} />,
+                                h3: ({ ...props}) => <h3 className="text-sm font-semibold text-emerald-200 mb-1" {...props} />,
+                                p: ({ ...props}) => <p className="text-gray-200 mb-2" {...props} />,
+                                ul: ({ ...props}) => <ul className="list-disc list-inside text-gray-200 mb-2 space-y-1" {...props} />,
+                                ol: ({ ...props}) => <ol className="list-decimal list-inside text-gray-200 mb-2 space-y-1" {...props} />,
+                                li: ({ ...props}) => <li className="text-gray-200" {...props} />,
+                                code: ({ className, children, ...props}) => {
                                   const match = /language-(\w+)/.exec(className || '');
                                   return match ? (
                                     <code className={cn(className, "block bg-gray-800 text-gray-200 p-2 rounded text-xs font-mono overflow-x-auto")} {...props}>
@@ -483,10 +483,10 @@ export default function ChatInterface() {
                                     </code>
                                   );
                                 },
-                                pre: ({node, ...props}) => <pre className="bg-gray-800 p-2 rounded overflow-x-auto mb-2" {...props} />,
-                                strong: ({node, ...props}) => <strong className="font-semibold text-emerald-300" {...props} />,
-                                em: ({node, ...props}) => <em className="italic text-gray-300" {...props} />,
-                                blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-emerald-500 pl-4 italic text-gray-300 mb-2" {...props} />,
+                                pre: (props) => <pre className="bg-gray-800 p-2 rounded overflow-x-auto mb-2" {...props} />,
+                                strong: (props) => <strong className="font-semibold text-emerald-300" {...props} />,
+                                em: (props) => <em className="italic text-gray-300" {...props} />,
+                                blockquote: (props) => <blockquote className="border-l-4 border-emerald-500 pl-4 italic text-gray-300 mb-2" {...props} />,
                               }}
                             >
                               {streamingMessage}

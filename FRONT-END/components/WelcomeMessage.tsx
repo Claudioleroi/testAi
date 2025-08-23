@@ -20,10 +20,10 @@ const WelcomeMessage = () => {
           Welcome to Mtn Ai Agent
         </h1>
         <p className="text-gray-400 text-lg animate-fade-in-delay">
-          Your personal AI assistant where you can customize and train your own AI model
+          everwhere you !!!
         </p>
         <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500 animate-fade-in-delay-2">
-          <span className="px-3 py-1 bg-gray-800/50 rounded-full">Custom Training</span>
+          <span className="px-3 py-1 bg-gray-800/50 rounded-full">ussd</span>
           <span className="px-3 py-1 bg-gray-800/50 rounded-full">Multiple Models</span>
           {/* <span className="px-3 py-1 bg-gray-800/50 rounded-full">Real-time Logs</span> */}
         </div>
